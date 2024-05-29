@@ -1,21 +1,51 @@
+
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gasoek+One&family=Gugi&family=Jua&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+
 /* CSS Reset */
-*{margin:0;padding:0;font:inherit;color:inherit;}
+*{margin:0;padding:0;font:inherit;color:inherit;  font-family: "Jua", sans-serif;}
 *, :after, :before {box-sizing:border-box;}
 :root {-webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:100%;text-size-adjust:100%;cursor:default;line-height:1.5;overflow-wrap:break-word;word-break:break-word;tab-size:4}
 html, body {height:100%;}
 img, picture, video, canvas, svg {display: block;max-width:100%;}
-button {background:none;border:0;cursor:pointer;}
+ button {background:none;border:0;cursor:pointer;}
 a {text-decoration:none}
 table {border-collapse:collapse;border-spacing:0}
 th, td {border: solid 1px #000;}
 
+
+
 /* 나의 CSS */
 img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-width:90%;
-  height:auto;
+  border:solid 2px;
+  border-bottom-color:#ffe;
+  border-left-color:#eed;
+  border-right-color:#eed;
+  border-top-color:#ccb;
+  max-height:50%;
+  max-width:50%;
+  margin: 0 auto;
+}
+#ani3 {
+  width:200px;  height:100px;  background-color:black; position: relative; animation-name:bgchange;  animation-fill-mode: both; animation-duration:5s; animation-iteration-count: infinite; animation-play-state: paused;  animation-direction: alternate;
+}
+
+@keyframes bgchange{0% {background-color:rgb(255, 0, 0); left: 0; top: 0;}  25%{background-color:orange; left: 25%; top: 200px;}  50%{background-color:yellow; left: 50%; top: 200px;}  100%{background-color:rgb(68, 0, 255); left: 80%; top: 0;}}
+
+
+
+#trans5 {
+  width:200px;  height:200px;  position: relative; background-color: gold;
+}
+
+#trans5:hover {
+  /* transform:translateX(100px) scale(2,2); */
+  transform: rotate(70deg);
+  transform-origin: bottom;
 }
 
 #head_title {
@@ -26,39 +56,51 @@ img {
 
 .flex-container {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 100%;
+  width: 500px;
   height: auto;
-  background-color: #c4c4c4;
+
+  background-color: #31bbe6;
   border: 1px solid black;
+  
+  dt{
+    font-size: 14px;
+  }
+
+  p{
+    font-size: 14px;
+  }
+
 }
 
 .flex-item {
-  width: auto;
-  margin: 5px;
-  color: white;
-  background-color: #52aaaa;
+  background-color:#ddc;
+
+  box-shadow:0 0 5px 0 rgba(0,0,0,.25) inset, 0 5px 10px 5px rgba(0,0,0,.25);
+  box-sizing:border-box;  
+  text-align:center;
 }
 
 .flex-item:nth-child(2n) {
   background-color: #5ebfbf;
 }
 
-.grid-container{
-  display:grid;
-  grid-template-columns:50% 50%;
-  grid-template-rows:50% 50%;
-  width: 100%;
-  height: auto;
-  background-color: #ffc4c4;
-  border: 1px solid black;
+
+#header {
+  grid-area: header;
+  background-color: #cccc00;
 }
-.grid-item{
-  color:white;
-  margin: 5px;
-  background-color:#52aaaa;
+
+#sidebar {
+  grid-area: sidebar;
+  background-color: #3333ff;
 }
-.grid-item:nth-child(2n){
-  background-color:#5ebfbf;
+
+#content {
+  grid-area: content;
+  background-color: gray;
+}
+
+#footer {
+  grid-area: footer;
+  background-color: black;
 }
